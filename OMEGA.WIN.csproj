@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B02398E8-AEBA-40E3-BFB5-3CF43883B813}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OMEGA.WIN</RootNamespace>
+    <AssemblyName>OMEGA.WIN</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>OMEGA.WIN.ico</ApplicationIcon>
+    <StartupObject>MetroLoader.Program</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="HWIDGrabber\HWDI.cs" />
+    <Compile Include="ManualMapInjection\Injection\Helpers.cs" />
+    <Compile Include="ManualMapInjection\Injection\ManualMapInjector.cs" />
+    <Compile Include="ManualMapInjection\Injection\Types\ManagedPtr.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\DataSectionFlags.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\DllCharacteristicsType.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\FILETIME.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_BASE_RELOCATION.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_DATA_DIRECTORY.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_DOS_HEADER.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_EXPORT_DIRECTORY.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_FILE_HEADER.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_IMPORT_BY_NAME.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_IMPORT_DESCRIPTOR.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_LOAD_CONFIG_DIRECTORY32.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_NT_HEADERS32.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_NT_HEADERS64.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_OPTIONAL_HEADER32.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_OPTIONAL_HEADER64.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_SECTION_HEADER.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_THUNK_DATA.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\IMAGE_TLS_DIRECTORY32.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\Imports.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\MachineType.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\MagicType.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PBYTE.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PCHAR.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PDWORD.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_BASE_RELOCATION.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_DOS_HEADER.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_EXPORT_DIRECTORY.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_IMPORT_BY_NAME.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_IMPORT_DESCRIPTOR.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_LOAD_CONFIG_DIRECTORY32.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_NT_HEADERS32.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_SECTION_HEADER.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_THUNK_DATA.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PIMAGE_TLS_DIRECTORY32.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PPROCESS_BASIC_INFORMATION.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PROCESS_BASIC_INFORMATION.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PSHORT.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\PWORD.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\SubSystemType.cs" />
+    <Compile Include="ManualMapInjection\Injection\Win32\UNICODE_STRING.cs" />
+    <Compile Include="MetroLoader\Form1.cs" />
+    <Compile Include="MetroLoader\Form2.cs" />
+    <Compile Include="MetroLoader\Form4.cs" />
+    <Compile Include="MetroLoader\Program.cs" />
+    <Compile Include="MetroLoader\Properties\Resources.cs" />
+    <Compile Include="MetroLoader\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ProcessedByFody.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\metroframework\design\dll.compressed" />
+    <EmbeddedResource Include="Costura\metroframework\dll.compressed" />
+    <EmbeddedResource Include="Costura\metroframework\fonts\dll.compressed" />
+    <EmbeddedResource Include="MetroLoader\Form1.resources" />
+    <EmbeddedResource Include="MetroLoader\Form2.resources" />
+    <EmbeddedResource Include="MetroLoader\Form4.resources" />
+    <EmbeddedResource Include="MetroLoader\Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="MetroLoader\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
